@@ -32,7 +32,6 @@ type CategoryStats = {
 };
 
 type AnalyzeResponse = {
-  grammar_score: number;
   errors: AnalyzeError[];
   corrected_text: string;
   unmapped: unknown[];
@@ -94,7 +93,6 @@ const isValidAnalyzeResponse = (data: unknown): data is AnalyzeResponse => {
   }
   const candidate = data as AnalyzeResponse;
   if (
-    typeof candidate.grammar_score !== "number" ||
     typeof candidate.corrected_text !== "string" ||
     !Array.isArray(candidate.errors) ||
     !Array.isArray(candidate.unmapped) ||
@@ -215,7 +213,6 @@ const parseOrNull = (rawText: string) => {
 };
 
 const buildFallbackResponse = (sourceText: string): AnalyzeResponse => ({
-  grammar_score: 0,
   errors: [],
   corrected_text: sourceText,
   unmapped: [{ reason: "model_output_invalid" }],
@@ -419,29 +416,11 @@ const computeSpans = (
   }
 
   return {
-    grammar_score: 0,
     errors: computedErrors,
     corrected_text: parsed.corrected_text,
     unmapped,
     drills: parsed.drills,
   };
-};
-
-const computeGrammarScore = (
-  errors: AnalyzeError[],
-  originalText: string
-) => {
-  const wordCount = originalText.trim().length
-    ? originalText.trim().split(/\s+/).length
-    : 0;
-  const errorPoints = errors.reduce(
-    (sum, error) => sum + clampSeverity(error.severity),
-    0
-  );
-  const density = errorPoints / Math.max(wordCount, 1);
-  const raw = Math.max(0, 1 - density * 5);
-  const score = Math.round(raw * 10) / 10;
-  return { score, wordCount, errorPoints };
 };
 
 const generateDrillsFromErrors = (errors: AnalyzeError[]): GeneratedDrill[] => {
@@ -640,10 +619,10 @@ export async function POST(request: Request) {
 
   const buildResponseRequest = () => {
     const base = {
-      model: "gpt-4o",
+      model: "gpt-4o-mini",
       input: [{ role: "user", content: prompt }],
       temperature: 0,
-      max_output_tokens: 2500,
+      max_output_tokens: 1200,
     };
     return base;
   };
@@ -727,11 +706,6 @@ export async function POST(request: Request) {
       return NextResponse.json(buildFallbackResponse(body.text));
     }
 
-    const { score, wordCount, errorPoints } = computeGrammarScore(
-      normalized.errors,
-      body.text
-    );
-
     // Generate drills server-side from rule templates
     const serverDrills = generateDrillsFromErrors(normalized.errors);
 
@@ -740,7 +714,6 @@ export async function POST(request: Request) {
 
     const finalResponse: AnalyzeResponse = {
       ...normalized,
-      grammar_score: score,
       drills: serverDrills,
       category_stats: categoryStats,
     };
@@ -748,7 +721,7 @@ export async function POST(request: Request) {
     const totalDuration = Date.now() - requestStart;
     const categoryBreakdown = categoryStats.map((s) => `${s.category}.${s.subcategory}:${s.count}`).join(", ");
     console.info(
-      `[analyze] score=${score} errors=${normalized.errors.length} drills=${serverDrills.length} words=${wordCount} points=${errorPoints} categories=[${categoryBreakdown}]`
+      `[analyze] errors=${normalized.errors.length} drills=${serverDrills.length} categories=[${categoryBreakdown}]`
     );
     console.info("[analyze] timings", {
       openai_ms: openAiDuration,

@@ -27,7 +27,6 @@ type CategoryStats = {
 };
 
 type AnalyzeResponse = {
-  grammar_score: number;
   errors: AnalyzeError[];
   corrected_text: string;
   unmapped: unknown[];
@@ -62,7 +61,7 @@ export default function Home() {
   const [drillState, setDrillState] = useState<Record<number, DrillState>>({});
   const [previousAttempt, setPreviousAttempt] = useState<{
     text: string;
-    score: number;
+    errorCount: number;
   } | null>(null);
   const [lastSubmittedText, setLastSubmittedText] = useState("");
   const [rewriteText, setRewriteText] = useState("");
@@ -162,7 +161,7 @@ export default function Home() {
       if (result && lastSubmittedText) {
         setPreviousAttempt({
           text: lastSubmittedText,
-          score: result.grammar_score,
+          errorCount: result.errors.length,
         });
       }
       setResult(data);
@@ -254,34 +253,32 @@ export default function Home() {
 
             {activeTab === "results" ? (
               <>
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <h2 className="text-lg font-semibold">Grammar score</h2>
-                    <p className="text-2xl font-semibold">
-                      {result.grammar_score}
-                    </p>
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-3">
+                    <h2 className="text-lg font-semibold">
+                      {result.errors.length === 0 
+                        ? "No errors found" 
+                        : `${result.errors.length} error${result.errors.length === 1 ? "" : "s"} found`}
+                    </h2>
                   </div>
 
                   {result.category_stats && result.category_stats.length > 0 ? (
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-sm font-medium text-zinc-600">Error breakdown</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {result.category_stats.map((stat) => (
-                          <span
-                            key={`${stat.category}-${stat.subcategory}`}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
-                          >
-                            <span className="capitalize">
-                              {stat.category.toLowerCase().replace("_", " ")}
-                            </span>
-                            <span className="text-zinc-400">·</span>
-                            <span className="text-zinc-500">{stat.subcategory}</span>
-                            <span className="ml-1 rounded-full bg-zinc-200 px-1.5 py-0.5 text-xs font-semibold">
-                              {stat.count}
-                            </span>
+                    <div className="flex flex-wrap gap-2">
+                      {result.category_stats.map((stat) => (
+                        <span
+                          key={`${stat.category}-${stat.subcategory}`}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
+                        >
+                          <span className="capitalize">
+                            {stat.category.toLowerCase().replace("_", " ")}
                           </span>
-                        ))}
-                      </div>
+                          <span className="text-zinc-400">·</span>
+                          <span className="text-zinc-500">{stat.subcategory}</span>
+                          <span className="ml-1 rounded-full bg-zinc-200 px-1.5 py-0.5 text-xs font-semibold">
+                            {stat.count}
+                          </span>
+                        </span>
+                      ))}
                     </div>
                   ) : null}
                 </div>
@@ -390,12 +387,9 @@ export default function Home() {
                 {previousAttempt ? (
                   <details className="rounded-md border border-zinc-100 bg-zinc-50 p-3 text-sm">
                     <summary className="cursor-pointer font-medium text-zinc-700">
-                      Previous attempt
+                      Previous attempt ({previousAttempt.errorCount} error{previousAttempt.errorCount === 1 ? "" : "s"})
                     </summary>
-                    <div className="mt-3 flex flex-col gap-2">
-                      <div className="text-xs text-zinc-500">
-                        Score: {previousAttempt.score}
-                      </div>
+                    <div className="mt-3">
                       <p className="rounded-md border border-zinc-200 bg-white p-3 text-sm">
                         {previousAttempt.text}
                       </p>

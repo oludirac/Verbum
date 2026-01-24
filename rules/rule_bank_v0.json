@@ -457,5 +457,214 @@
     "drill_templates": [
       { "type": "fill_blank", "prompt": "Voy ___ casa.", "answer": "a" }
     ]
+  },
+  {
+    "rule_id": "USAGE_FC_EMBARAZADO_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: embarazado ≠ embarrassed",
+    "explanation_es": "\"Embarazado/a\" significa pregnant, no embarrassed. Para 'embarrassed', usa \"avergonzado\" o \"me da vergüenza\".",
+    "examples": [
+      { "bad": "Estoy embarazado porque llegué tarde.", "good": "Estoy avergonzado porque llegué tarde." },
+      { "bad": "Ella está muy embarazada por el error.", "good": "Ella está muy avergonzada por el error." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "I'm embarrassed = Estoy ___", "options": ["embarazado", "avergonzado"], "answer": "avergonzado" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_REALIZAR_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: realizar ≠ realize (darse cuenta)",
+    "explanation_es": "\"Realizar\" significa to carry out/accomplish. Para 'realize' (become aware), usa \"darse cuenta de\".",
+    "examples": [
+      { "bad": "Realicé que estaba equivocado.", "good": "Me di cuenta de que estaba equivocado." },
+      { "bad": "No realizó el problema.", "good": "No se dio cuenta del problema." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_ACTUALMENTE_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: actualmente ≠ actually",
+    "explanation_es": "\"Actualmente\" significa currently/nowadays. Para 'actually', usa \"en realidad\" o \"de hecho\".",
+    "examples": [
+      { "bad": "Actualmente, no me gusta.", "good": "En realidad, no me gusta." },
+      { "bad": "Actualmente es muy fácil.", "good": "De hecho, es muy fácil." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "Actually, I don't like it = ___, no me gusta.", "options": ["Actualmente", "En realidad"], "answer": "En realidad" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_ASISTIR_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: asistir ≠ assist (ayudar)",
+    "explanation_es": "\"Asistir\" significa to attend. Para 'assist/help', usa \"ayudar\".",
+    "examples": [
+      { "bad": "Te voy a asistir con la tarea.", "good": "Te voy a ayudar con la tarea." },
+      { "bad": "Necesito que me asistas.", "good": "Necesito que me ayudes." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "I'll help you = Te voy a ___", "options": ["asistir", "ayudar"], "answer": "ayudar" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_EXITO_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: éxito ≠ exit (salida)",
+    "explanation_es": "\"Éxito\" significa success. Para 'exit', usa \"salida\".",
+    "examples": [
+      { "bad": "¿Dónde está el éxito?", "good": "¿Dónde está la salida?" },
+      { "bad": "Busco el éxito de emergencia.", "good": "Busco la salida de emergencia." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "Where is the exit? = ¿Dónde está ___?", "options": ["el éxito", "la salida"], "answer": "la salida" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_SENSIBLE_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: sensible ≠ sensible (sensato)",
+    "explanation_es": "\"Sensible\" significa sensitive. Para 'sensible' (reasonable), usa \"sensato\" o \"razonable\".",
+    "examples": [
+      { "bad": "Es una decisión muy sensible.", "good": "Es una decisión muy sensata." },
+      { "bad": "Sé sensible, no hagas eso.", "good": "Sé sensato, no hagas eso." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "A sensible decision = Una decisión ___", "options": ["sensible", "sensata"], "answer": "sensata" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_FC_LIBRERIA_001",
+    "category": "USAGE",
+    "subcategory": "false_cognate",
+    "rule_type": "lexical",
+    "title": "Falso cognado: librería ≠ library (biblioteca)",
+    "explanation_es": "\"Librería\" significa bookstore. Para 'library', usa \"biblioteca\".",
+    "examples": [
+      { "bad": "Voy a estudiar en la librería.", "good": "Voy a estudiar en la biblioteca." },
+      { "bad": "Saqué el libro de la librería.", "good": "Saqué el libro de la biblioteca." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "I study at the library = Estudio en la ___", "options": ["librería", "biblioteca"], "answer": "biblioteca" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_DECISION_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tomar una decisión (no hacer)",
+    "explanation_es": "En español se dice \"tomar una decisión\", no \"hacer una decisión\".",
+    "examples": [
+      { "bad": "Necesito hacer una decisión.", "good": "Necesito tomar una decisión." },
+      { "bad": "Hice la decisión correcta.", "good": "Tomé la decisión correcta." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Necesito ___ una decisión.", "answer": "tomar" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_PREGUNTA_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: hacer una pregunta (no preguntar una pregunta)",
+    "explanation_es": "En español se dice \"hacer una pregunta\", no \"preguntar una pregunta\".",
+    "examples": [
+      { "bad": "Quiero preguntar una pregunta.", "good": "Quiero hacer una pregunta." },
+      { "bad": "Preguntó muchas preguntas.", "good": "Hizo muchas preguntas." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Quiero ___ una pregunta.", "answer": "hacer" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_EDAD_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tener X años (no ser X años)",
+    "explanation_es": "Para expresar edad, se usa \"tener\", no \"ser\": \"Tengo 25 años\".",
+    "examples": [
+      { "bad": "Soy 25 años.", "good": "Tengo 25 años." },
+      { "bad": "Mi hermana es 30 años.", "good": "Mi hermana tiene 30 años." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ 25 años.", "answer": "Tengo" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_HAMBRE_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tener hambre/sed/frío/calor (no estar)",
+    "explanation_es": "Para sensaciones físicas se usa \"tener\": tener hambre, sed, frío, calor, sueño, miedo.",
+    "examples": [
+      { "bad": "Estoy hambre.", "good": "Tengo hambre." },
+      { "bad": "Estoy mucho frío.", "good": "Tengo mucho frío." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ hambre.", "answer": "Tengo" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_SUENO_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tener sueño (no estar cansado para 'sleepy')",
+    "explanation_es": "Para 'sleepy', usa \"tener sueño\". \"Estar cansado\" significa tired, not sleepy.",
+    "examples": [
+      { "bad": "Estoy muy cansado, necesito dormir.", "good": "Tengo mucho sueño, necesito dormir." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "I'm sleepy = ___ sueño", "options": ["Estoy", "Tengo"], "answer": "Tengo" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_RAZON_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tener razón (no ser correcto)",
+    "explanation_es": "Para 'to be right', usa \"tener razón\", no \"ser correcto\".",
+    "examples": [
+      { "bad": "Eres correcto sobre eso.", "good": "Tienes razón sobre eso." },
+      { "bad": "Creo que soy correcto.", "good": "Creo que tengo razón." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "You're right = ___ razón.", "answer": "Tienes" }
+    ]
+  },
+  {
+    "rule_id": "USAGE_COLL_SENTIDO_001",
+    "category": "USAGE",
+    "subcategory": "collocation",
+    "rule_type": "lexical",
+    "title": "Colocación: tener sentido (no hacer sentido)",
+    "explanation_es": "En español se dice \"tener sentido\", no \"hacer sentido\" (anglicismo).",
+    "examples": [
+      { "bad": "Eso no hace sentido.", "good": "Eso no tiene sentido." },
+      { "bad": "Hace mucho sentido.", "good": "Tiene mucho sentido." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "That makes sense = Eso ___ sentido.", "answer": "tiene" }
+    ]
   }
 ]
