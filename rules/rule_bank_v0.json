@@ -1,0 +1,461 @@
+[
+  {
+    "rule_id": "AGR_GENDER_001",
+    "category": "AGREEMENT",
+    "subcategory": "gender",
+    "rule_type": "constructional",
+    "title": "Concordancia de género (artículo/adjetivo ↔ sustantivo)",
+    "explanation_es": "En español, el artículo y el adjetivo deben concordar en género con el sustantivo.",
+    "examples": [
+      { "bad": "la coche nuevo", "good": "el coche nuevo" },
+      { "bad": "un casa grande", "good": "una casa grande" }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" },
+      { "type": "multiple_choice", "prompt": "Elige el artículo correcto: ___ coche nuevo", "options": ["la", "el"], "answer": "el" }
+    ]
+  },
+  {
+    "rule_id": "AGR_NUMBER_001",
+    "category": "AGREEMENT",
+    "subcategory": "number",
+    "rule_type": "constructional",
+    "title": "Concordancia de número (sujeto ↔ verbo / sustantivo ↔ adjetivo)",
+    "explanation_es": "El verbo y/o el adjetivo deben concordar en número con el sujeto o el sustantivo.",
+    "examples": [
+      { "bad": "Las personas es amable.", "good": "Las personas son amables." },
+      { "bad": "Tengo dos hermano.", "good": "Tengo dos hermanos." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Las personas ___ amables. (ser)", "answer": "son" },
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "SER_ESTAR_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "ser_estar",
+    "rule_type": "constructional",
+    "title": "Ser vs. estar (identidad/característica vs. estado/ubicación)",
+    "explanation_es": "Usa \"ser\" para identidad o características permanentes y \"estar\" para estados temporales y ubicaciones.",
+    "examples": [
+      { "bad": "Soy en casa.", "good": "Estoy en casa." },
+      { "bad": "La puerta es abierta.", "good": "La puerta está abierta." },
+      { "bad": "Estoy médico.", "good": "Soy médico." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "___ en casa.", "options": ["Soy", "Estoy"], "answer": "Estoy" },
+      { "type": "multiple_choice", "prompt": "___ médico.", "options": ["Soy", "Estoy"], "answer": "Soy" }
+    ]
+  },
+  {
+    "rule_id": "POR_PARA_001",
+    "category": "PREPOSITION",
+    "subcategory": "por_para",
+    "rule_type": "constructional",
+    "title": "Por vs. para (causa vs. finalidad/destino/plazo)",
+    "explanation_es": "Usa \"por\" para causa/motivo y \"para\" para finalidad, destino o plazo.",
+    "examples": [
+      { "bad": "Estudio por aprender.", "good": "Estudio para aprender." },
+      { "bad": "Gracias para tu ayuda.", "good": "Gracias por tu ayuda." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "Gracias ___ tu ayuda.", "options": ["por", "para"], "answer": "por" },
+      { "type": "multiple_choice", "prompt": "Estudio ___ aprender.", "options": ["por", "para"], "answer": "para" }
+    ]
+  },
+  {
+    "rule_id": "PREP_A_001",
+    "category": "PREPOSITION",
+    "subcategory": "a_personal",
+    "rule_type": "constructional",
+    "title": "A personal (objeto directo de persona)",
+    "explanation_es": "Con un objeto directo humano específico, se usa la \"a\" personal: \"veo a Juan\".",
+    "examples": [
+      { "bad": "Veo Juan todos los días.", "good": "Veo a Juan todos los días." },
+      { "bad": "Conozco María.", "good": "Conozco a María." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "CLITIC_ORDER_001",
+    "category": "PRONOUN",
+    "subcategory": "clitic_order",
+    "rule_type": "constructional",
+    "title": "Orden de pronombres átonos (me/te/se/nos/os + lo/la/los/las)",
+    "explanation_es": "Cuando hay dos pronombres, primero va el indirecto (me/te/se/nos/os/le→se) y después el directo (lo/la/los/las).",
+    "examples": [
+      { "bad": "Lo me dio.", "good": "Me lo dio." },
+      { "bad": "Le lo expliqué.", "good": "Se lo expliqué." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Reordena: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "SUBJ_TRIG_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "mood",
+    "rule_type": "constructional",
+    "title": "Subjuntivo tras verbos de deseo/recomendación",
+    "explanation_es": "Después de verbos como querer, recomendar, esperar, pedir, se usa \"que\" + subjuntivo.",
+    "examples": [
+      { "bad": "Quiero que vienes mañana.", "good": "Quiero que vengas mañana." },
+      { "bad": "Te recomiendo que vas temprano.", "good": "Te recomiendo que vayas temprano." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Quiero que ___ mañana. (venir)", "answer": "vengas" }
+    ]
+  },
+  {
+    "rule_id": "SUBJ_TRIG_002",
+    "category": "VERB_SYSTEM",
+    "subcategory": "mood",
+    "rule_type": "constructional",
+    "title": "Subjuntivo tras expresiones de duda/negación",
+    "explanation_es": "Después de expresiones como \"no creo que\", \"dudo que\", \"es posible que\", se usa subjuntivo.",
+    "examples": [
+      { "bad": "No creo que tiene razón.", "good": "No creo que tenga razón." },
+      { "bad": "Dudo que viene.", "good": "Dudo que venga." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "No creo que ___ razón. (tener)", "answer": "tenga" }
+    ]
+  },
+  {
+    "rule_id": "SUBJ_TRIG_003",
+    "category": "VERB_SYSTEM",
+    "subcategory": "mood",
+    "rule_type": "constructional",
+    "title": "Subjuntivo tras expresiones de emoción",
+    "explanation_es": "Después de expresiones de emoción como \"me alegra que\", \"es triste que\", se usa subjuntivo.",
+    "examples": [
+      { "bad": "Me alegra que estás aquí.", "good": "Me alegra que estés aquí." },
+      { "bad": "Es triste que no puede venir.", "good": "Es triste que no pueda venir." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Me alegra que ___ aquí. (estar)", "answer": "estés" }
+    ]
+  },
+  {
+    "rule_id": "TENSE_PRET_IMP_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "tense",
+    "rule_type": "constructional",
+    "title": "Pretérito vs. imperfecto (acción puntual vs. contexto/hábito)",
+    "explanation_es": "El pretérito se usa para acciones completadas; el imperfecto para descripciones, hábitos o acciones en progreso en el pasado.",
+    "examples": [
+      { "bad": "Cuando era niño, fui al parque cada día.", "good": "Cuando era niño, iba al parque cada día." },
+      { "bad": "Ayer llovía cuando llegaba.", "good": "Ayer llovía cuando llegué." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "Cuando era niño, ___ al parque cada día.", "options": ["fui", "iba"], "answer": "iba" }
+    ]
+  },
+  {
+    "rule_id": "VERB_GUSTAR_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "construction",
+    "rule_type": "constructional",
+    "title": "Construcción con gustar (me gusta / me gustan)",
+    "explanation_es": "Con verbos como gustar, encantar, molestar, el sujeto gramatical es lo que gusta, no la persona.",
+    "examples": [
+      { "bad": "Me gusto el libro.", "good": "Me gusta el libro." },
+      { "bad": "Me gusta los libros.", "good": "Me gustan los libros." },
+      { "bad": "Yo gusto el café.", "good": "Me gusta el café." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Me ___ los libros. (gustar)", "answer": "gustan" },
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "VERB_HAY_ESTAR_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "construction",
+    "rule_type": "constructional",
+    "title": "Hay vs. estar (existencia vs. ubicación)",
+    "explanation_es": "\"Hay\" introduce algo nuevo o indefinido (existencia). \"Estar\" ubica algo ya conocido o definido.",
+    "examples": [
+      { "bad": "Está un libro en la mesa.", "good": "Hay un libro en la mesa." },
+      { "bad": "Hay el libro en la mesa.", "good": "El libro está en la mesa." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "___ un libro en la mesa.", "options": ["Hay", "Está"], "answer": "Hay" }
+    ]
+  },
+  {
+    "rule_id": "VERB_SABER_CONOCER_001",
+    "category": "VERB_SYSTEM",
+    "subcategory": "construction",
+    "rule_type": "constructional",
+    "title": "Saber vs. conocer",
+    "explanation_es": "\"Saber\" se usa para información/habilidades. \"Conocer\" para personas, lugares, o familiaridad.",
+    "examples": [
+      { "bad": "Conozco hablar español.", "good": "Sé hablar español." },
+      { "bad": "Sé a María.", "good": "Conozco a María." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "___ hablar español.", "options": ["Sé", "Conozco"], "answer": "Sé" },
+      { "type": "multiple_choice", "prompt": "___ a María.", "options": ["Sé", "Conozco"], "answer": "Conozco" }
+    ]
+  },
+  {
+    "rule_id": "PRON_LO_LE_001",
+    "category": "PRONOUN",
+    "subcategory": "object",
+    "rule_type": "constructional",
+    "title": "Pronombres de objeto directo vs. indirecto (lo/la vs. le)",
+    "explanation_es": "\"Lo/la\" reemplazan objetos directos. \"Le\" reemplaza objetos indirectos (a quién se da/dice algo).",
+    "examples": [
+      { "bad": "Le vi ayer.", "good": "Lo vi ayer." },
+      { "bad": "Lo di el libro.", "good": "Le di el libro." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ vi ayer. (a él)", "answer": "Lo" },
+      { "type": "fill_blank", "prompt": "___ di el libro. (a ella)", "answer": "Le" }
+    ]
+  },
+  {
+    "rule_id": "PRON_REFLEX_001",
+    "category": "PRONOUN",
+    "subcategory": "reflexive",
+    "rule_type": "constructional",
+    "title": "Verbos reflexivos obligatorios",
+    "explanation_es": "Algunos verbos requieren pronombre reflexivo: arrepentirse, quejarse, atreverse, etc.",
+    "examples": [
+      { "bad": "Arrepiento de mis errores.", "good": "Me arrepiento de mis errores." },
+      { "bad": "Atrevo a decirlo.", "good": "Me atrevo a decirlo." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "PRON_REFLEX_002",
+    "category": "PRONOUN",
+    "subcategory": "reflexive",
+    "rule_type": "constructional",
+    "title": "Reflexivo vs. no reflexivo (cambio de significado)",
+    "explanation_es": "Algunos verbos cambian de significado con/sin reflexivo: ir/irse, dormir/dormirse, etc.",
+    "examples": [
+      { "bad": "Me fui a la tienda.", "good": "Fui a la tienda." },
+      { "bad": "El niño duerme a las 9.", "good": "El niño se duerme a las 9." }
+    ],
+    "drill_templates": [
+      { "type": "multiple_choice", "prompt": "El niño ___ a las 9. (empieza a dormir)", "options": ["duerme", "se duerme"], "answer": "se duerme" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_PROBLEMA_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"problema\" es masculino",
+    "explanation_es": "\"Problema\" termina en -a pero es masculino: \"el problema\", \"un problema\".",
+    "examples": [
+      { "bad": "la problema", "good": "el problema" },
+      { "bad": "una problema grave", "good": "un problema grave" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ problema es serio.", "answer": "El" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_TEMA_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"tema\" es masculino",
+    "explanation_es": "\"Tema\" termina en -a pero es masculino: \"el tema\", \"un tema\".",
+    "examples": [
+      { "bad": "la tema principal", "good": "el tema principal" },
+      { "bad": "una tema interesante", "good": "un tema interesante" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ tema es interesante.", "answer": "El" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_SISTEMA_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"sistema\" es masculino",
+    "explanation_es": "\"Sistema\" termina en -a pero es masculino: \"el sistema\", \"un sistema\".",
+    "examples": [
+      { "bad": "la sistema operativa", "good": "el sistema operativo" },
+      { "bad": "una sistema nueva", "good": "un sistema nuevo" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "___ sistema funciona bien.", "answer": "El" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_MAPA_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"mapa\" es masculino",
+    "explanation_es": "\"Mapa\" termina en -a pero es masculino: \"el mapa\", \"un mapa\".",
+    "examples": [
+      { "bad": "la mapa", "good": "el mapa" },
+      { "bad": "una mapa grande", "good": "un mapa grande" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Necesito ___ mapa de la ciudad.", "answer": "un" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_DIA_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"día\" es masculino",
+    "explanation_es": "\"Día\" termina en -a pero es masculino: \"el día\", \"un día\".",
+    "examples": [
+      { "bad": "la día", "good": "el día" },
+      { "bad": "una día bonita", "good": "un día bonito" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Hoy es ___ día especial.", "answer": "un" }
+    ]
+  },
+  {
+    "rule_id": "LEX_GENDER_MANO_001",
+    "category": "LEXICAL_GENDER",
+    "subcategory": "exceptions",
+    "rule_type": "lexical",
+    "title": "Género léxico: \"mano\" es femenino",
+    "explanation_es": "\"Mano\" termina en -o pero es femenino: \"la mano\", \"una mano\".",
+    "examples": [
+      { "bad": "el mano derecho", "good": "la mano derecha" },
+      { "bad": "un mano", "good": "una mano" }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Dame ___ mano.", "answer": "la" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_DEPENDER_DE_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: depender de",
+    "explanation_es": "El verbo \"depender\" se construye con \"de\": \"depender de algo\".",
+    "examples": [
+      { "bad": "Depende en el clima.", "good": "Depende del clima." },
+      { "bad": "Eso depende en ti.", "good": "Eso depende de ti." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_PENSAR_EN_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: pensar en",
+    "explanation_es": "Para 'think about', se usa \"pensar en\": \"pensar en algo\".",
+    "examples": [
+      { "bad": "Pienso sobre mi futuro.", "good": "Pienso en mi futuro." },
+      { "bad": "Estoy pensando sobre eso.", "good": "Estoy pensando en eso." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_SONAR_CON_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: soñar con",
+    "explanation_es": "El verbo \"soñar\" se construye con \"con\": \"soñar con algo\".",
+    "examples": [
+      { "bad": "Soñé sobre ti.", "good": "Soñé contigo." },
+      { "bad": "Sueño de ser médico.", "good": "Sueño con ser médico." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_INSISTIR_EN_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: insistir en",
+    "explanation_es": "El verbo \"insistir\" se construye con \"en\": \"insistir en algo\".",
+    "examples": [
+      { "bad": "Insisto que vengas.", "good": "Insisto en que vengas." },
+      { "bad": "Insistió sobre el tema.", "good": "Insistió en el tema." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_CONSISTIR_EN_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: consistir en",
+    "explanation_es": "El verbo \"consistir\" se construye con \"en\": \"consistir en algo\".",
+    "examples": [
+      { "bad": "El trabajo consiste de tres partes.", "good": "El trabajo consiste en tres partes." },
+      { "bad": "Consiste sobre hacer ejercicio.", "good": "Consiste en hacer ejercicio." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_CONTAR_CON_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: contar con",
+    "explanation_es": "\"Contar con\" significa 'rely on'. \"Contar\" solo significa 'to count/tell'.",
+    "examples": [
+      { "bad": "Cuento en ti.", "good": "Cuento contigo." },
+      { "bad": "Puedes contar en mí.", "good": "Puedes contar conmigo." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "LEX_FRAME_FIJARSE_EN_001",
+    "category": "PREPOSITION",
+    "subcategory": "verb_frame",
+    "rule_type": "lexical",
+    "title": "Marco verbal: fijarse en",
+    "explanation_es": "El verbo \"fijarse\" se construye con \"en\": \"fijarse en algo\".",
+    "examples": [
+      { "bad": "Fíjate a esto.", "good": "Fíjate en esto." },
+      { "bad": "No me fijé sobre eso.", "good": "No me fijé en eso." }
+    ],
+    "drill_templates": [
+      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+    ]
+  },
+  {
+    "rule_id": "PREP_EN_A_001",
+    "category": "PREPOSITION",
+    "subcategory": "direction",
+    "rule_type": "constructional",
+    "title": "Preposición de dirección: a (no en)",
+    "explanation_es": "Para indicar destino o dirección, se usa \"a\", no \"en\": \"voy a casa\", no \"voy en casa\".",
+    "examples": [
+      { "bad": "Voy en casa.", "good": "Voy a casa." },
+      { "bad": "Llegamos en Madrid.", "good": "Llegamos a Madrid." }
+    ],
+    "drill_templates": [
+      { "type": "fill_blank", "prompt": "Voy ___ casa.", "answer": "a" }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+    "grammar_score": 0,
+    "errors": [
+      {
+        "span": { "start": 0, "end": 0, "text": "" },
+        "category": "",
+        "rule_id": "",
+        "severity": 1,
+        "correction": "",
+        "confidence": 0
+      }
+    ],
+    "corrected_text": "",
+    "unmapped": [],
+    "drills": []
+  }
+  

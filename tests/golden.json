@@ -1,0 +1,198 @@
+{
+  "description": "Golden test cases for Verbum grammar detection",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "gender_agreement_001",
+      "input": "La coche nuevo es muy bonita.",
+      "expected_errors": [
+        {
+          "span_text": "La coche nuevo",
+          "rule_id": "AGR_GENDER_001",
+          "correction": "El coche nuevo"
+        },
+        {
+          "span_text": "bonita",
+          "rule_id": "AGR_GENDER_001",
+          "correction": "bonito"
+        }
+      ],
+      "expected_corrected": "El coche nuevo es muy bonito."
+    },
+    {
+      "id": "number_agreement_001",
+      "input": "Las personas es muy amable.",
+      "expected_errors": [
+        {
+          "span_text": "es",
+          "rule_id": "AGR_NUMBER_001",
+          "correction": "son"
+        },
+        {
+          "span_text": "amable",
+          "rule_id": "AGR_NUMBER_001",
+          "correction": "amables"
+        }
+      ],
+      "expected_corrected": "Las personas son muy amables."
+    },
+    {
+      "id": "ser_estar_001",
+      "input": "Soy en casa ahora.",
+      "expected_errors": [
+        {
+          "span_text": "Soy en casa",
+          "rule_id": "SER_ESTAR_001",
+          "correction": "Estoy en casa"
+        }
+      ],
+      "expected_corrected": "Estoy en casa ahora."
+    },
+    {
+      "id": "por_para_001",
+      "input": "Gracias para tu ayuda.",
+      "expected_errors": [
+        {
+          "span_text": "para",
+          "rule_id": "POR_PARA_001",
+          "correction": "por"
+        }
+      ],
+      "expected_corrected": "Gracias por tu ayuda."
+    },
+    {
+      "id": "a_personal_001",
+      "input": "Conozco María desde hace años.",
+      "expected_errors": [
+        {
+          "span_text": "Conozco María",
+          "rule_id": "PREP_A_001",
+          "correction": "Conozco a María"
+        }
+      ],
+      "expected_corrected": "Conozco a María desde hace años."
+    },
+    {
+      "id": "pensar_en_001",
+      "input": "Pienso sobre mi futuro.",
+      "expected_errors": [
+        {
+          "span_text": "sobre",
+          "rule_id": "LEX_FRAME_PENSAR_EN_001",
+          "correction": "en"
+        }
+      ],
+      "expected_corrected": "Pienso en mi futuro."
+    },
+    {
+      "id": "subjunctive_001",
+      "input": "Quiero que vienes mañana.",
+      "expected_errors": [
+        {
+          "span_text": "vienes",
+          "rule_id": "SUBJ_TRIG_001",
+          "correction": "vengas"
+        }
+      ],
+      "expected_corrected": "Quiero que vengas mañana."
+    },
+    {
+      "id": "gustar_001",
+      "input": "Me gusta los libros.",
+      "expected_errors": [
+        {
+          "span_text": "gusta",
+          "rule_id": "VERB_GUSTAR_001",
+          "correction": "gustan"
+        }
+      ],
+      "expected_corrected": "Me gustan los libros."
+    },
+    {
+      "id": "hay_estar_001",
+      "input": "Está un libro en la mesa.",
+      "expected_errors": [
+        {
+          "span_text": "Está",
+          "rule_id": "VERB_HAY_ESTAR_001",
+          "correction": "Hay"
+        }
+      ],
+      "expected_corrected": "Hay un libro en la mesa."
+    },
+    {
+      "id": "saber_conocer_001",
+      "input": "Sé a María.",
+      "expected_errors": [
+        {
+          "span_text": "Sé",
+          "rule_id": "VERB_SABER_CONOCER_001",
+          "correction": "Conozco"
+        }
+      ],
+      "expected_corrected": "Conozco a María."
+    },
+    {
+      "id": "problema_gender_001",
+      "input": "La problema es grave.",
+      "expected_errors": [
+        {
+          "span_text": "La problema",
+          "rule_id": "LEX_GENDER_PROBLEMA_001",
+          "correction": "El problema"
+        }
+      ],
+      "expected_corrected": "El problema es grave."
+    },
+    {
+      "id": "depender_de_001",
+      "input": "Eso depende en ti.",
+      "expected_errors": [
+        {
+          "span_text": "en",
+          "rule_id": "LEX_FRAME_DEPENDER_DE_001",
+          "correction": "de"
+        }
+      ],
+      "expected_corrected": "Eso depende de ti."
+    },
+    {
+      "id": "multiple_errors_001",
+      "input": "La coche nuevo es roja y soy en casa.",
+      "expected_errors": [
+        {
+          "span_text": "La coche nuevo",
+          "rule_id": "AGR_GENDER_001"
+        },
+        {
+          "span_text": "roja",
+          "rule_id": "AGR_GENDER_001"
+        },
+        {
+          "span_text": "soy en casa",
+          "rule_id": "SER_ESTAR_001"
+        }
+      ],
+      "expected_min_errors": 3
+    },
+    {
+      "id": "clean_text_001",
+      "input": "El libro está en la mesa.",
+      "expected_errors": [],
+      "expected_corrected": "El libro está en la mesa.",
+      "notes": "This sentence is grammatically correct"
+    },
+    {
+      "id": "direction_preposition_001",
+      "input": "Voy en casa.",
+      "expected_errors": [
+        {
+          "span_text": "en",
+          "rule_id": "PREP_EN_A_001",
+          "correction": "a"
+        }
+      ],
+      "expected_corrected": "Voy a casa."
+    }
+  ]
+}
