@@ -2,6 +2,8 @@
 
 Verbum is a personal Spanish grammar repair tool.
 
+Live private instance: https://verbum-lake.vercel.app/
+
 I use it to check Spanish writing, diagnose grammar problems, drill the exact patterns that failed, and rewrite the text in the same session. It is deliberately narrow: grammar first, minimal corrections, rule-backed explanations.
 
 It is not a Spanish course, a prose-polishing assistant, a style coach, or a progress app.
