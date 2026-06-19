@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "incremental": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "outDir": ".test-build",
+    "rootDir": "."
+  },
+  "include": ["core/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", ".next", ".test-build"]
+}

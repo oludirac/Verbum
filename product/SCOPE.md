@@ -1,28 +1,30 @@
-V0 GOAL
-Ship a Spanish writing accuracy tool that:
-- detects grammatical errors
-- gives minimal corrections
-- explains using fixed grammar rules
-- generates drills from the user’s own errors
+# Verbum V0 Scope
 
-DESIGN PRINCIPLE
-Verbum is learner-first by default: the UI must prioritize clarity, motivation, and practice flow over developer/debug information.
+V0 is a single-session Spanish grammar repair tool.
 
-V0 INCLUDES
-- Spanish only
-- free writing only
-- grammar score
-- error list + highlights
-- minimal corrected version
-- drills from errors
+## Includes
 
-V0 EXCLUDES
-- naturalness index
-- dialect system
-- dashboards
-- spaced repetition
-- style feedback
-- vocabulary coaching
-- tone/register
-- PEE mode
-- multiple languages
+- Spanish free writing.
+- Rule-backed grammar diagnostics.
+- Minimal corrections.
+- Rule-bank explanations.
+- Error-driven drills.
+- Rewrite and compare within the current session.
+- Rough grammar score for the current submission.
+- Unmapped issue capture when no rule fits.
+
+## Excludes
+
+- Database.
+- Auth.
+- Accounts.
+- Streaks, XP, dashboards, or gamified progress.
+- Long-term learner history.
+- General Spanish lessons.
+- Style, prose, tone, elegance, or vocabulary enrichment.
+- Naturalness scoring.
+- Multiple languages.
+
+## Expansion Boundary
+
+Prose/style/naturalness may become a separate future mode. It must stay separate from the grammar diagnostics loop so Verbum does not become a generic writing assistant.

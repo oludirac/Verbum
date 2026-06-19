@@ -5,14 +5,36 @@
     "subcategory": "gender",
     "rule_type": "constructional",
     "title": "Concordancia de género (artículo/adjetivo ↔ sustantivo)",
-    "explanation_es": "En español, el artículo y el adjetivo deben concordar en género con el sustantivo.",
+    "learner_explanation": "En español, el artículo y el adjetivo deben concordar en género con el sustantivo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la coche nuevo", "good": "el coche nuevo" },
-      { "bad": "un casa grande", "good": "una casa grande" }
+      {
+        "bad": "la coche nuevo",
+        "good": "el coche nuevo"
+      },
+      {
+        "bad": "un casa grande",
+        "good": "una casa grande"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" },
-      { "type": "multiple_choice", "prompt": "Elige el artículo correcto: ___ coche nuevo", "options": ["la", "el"], "answer": "el" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "Elige el artículo correcto: ___ coche nuevo",
+        "options": [
+          "la",
+          "el"
+        ],
+        "answer": "el"
+      }
     ]
   },
   {
@@ -21,14 +43,32 @@
     "subcategory": "number",
     "rule_type": "constructional",
     "title": "Concordancia de número (sujeto ↔ verbo / sustantivo ↔ adjetivo)",
-    "explanation_es": "El verbo y/o el adjetivo deben concordar en número con el sujeto o el sustantivo.",
+    "learner_explanation": "El verbo y/o el adjetivo deben concordar en número con el sujeto o el sustantivo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Las personas es amable.", "good": "Las personas son amables." },
-      { "bad": "Tengo dos hermano.", "good": "Tengo dos hermanos." }
+      {
+        "bad": "Las personas es amable.",
+        "good": "Las personas son amables."
+      },
+      {
+        "bad": "Tengo dos hermano.",
+        "good": "Tengo dos hermanos."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Las personas ___ amables. (ser)", "answer": "son" },
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "fill_blank",
+        "prompt": "Las personas ___ amables. (ser)",
+        "answer": "son"
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -37,15 +77,44 @@
     "subcategory": "ser_estar",
     "rule_type": "constructional",
     "title": "Ser vs. estar (identidad/característica vs. estado/ubicación)",
-    "explanation_es": "Usa \"ser\" para identidad o características permanentes y \"estar\" para estados temporales y ubicaciones.",
+    "learner_explanation": "Usa \"ser\" para identidad o características permanentes y \"estar\" para estados temporales y ubicaciones.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Soy en casa.", "good": "Estoy en casa." },
-      { "bad": "La puerta es abierta.", "good": "La puerta está abierta." },
-      { "bad": "Estoy médico.", "good": "Soy médico." }
+      {
+        "bad": "Soy en casa.",
+        "good": "Estoy en casa."
+      },
+      {
+        "bad": "La puerta es abierta.",
+        "good": "La puerta está abierta."
+      },
+      {
+        "bad": "Estoy médico.",
+        "good": "Soy médico."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "___ en casa.", "options": ["Soy", "Estoy"], "answer": "Estoy" },
-      { "type": "multiple_choice", "prompt": "___ médico.", "options": ["Soy", "Estoy"], "answer": "Soy" }
+      {
+        "type": "multiple_choice",
+        "prompt": "___ en casa.",
+        "options": [
+          "Soy",
+          "Estoy"
+        ],
+        "answer": "Estoy"
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "___ médico.",
+        "options": [
+          "Soy",
+          "Estoy"
+        ],
+        "answer": "Soy"
+      }
     ]
   },
   {
@@ -54,14 +123,40 @@
     "subcategory": "por_para",
     "rule_type": "constructional",
     "title": "Por vs. para (causa vs. finalidad/destino/plazo)",
-    "explanation_es": "Usa \"por\" para causa/motivo y \"para\" para finalidad, destino o plazo.",
+    "learner_explanation": "Usa \"por\" para causa/motivo y \"para\" para finalidad, destino o plazo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Estudio por aprender.", "good": "Estudio para aprender." },
-      { "bad": "Gracias para tu ayuda.", "good": "Gracias por tu ayuda." }
+      {
+        "bad": "Estudio por aprender.",
+        "good": "Estudio para aprender."
+      },
+      {
+        "bad": "Gracias para tu ayuda.",
+        "good": "Gracias por tu ayuda."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "Gracias ___ tu ayuda.", "options": ["por", "para"], "answer": "por" },
-      { "type": "multiple_choice", "prompt": "Estudio ___ aprender.", "options": ["por", "para"], "answer": "para" }
+      {
+        "type": "multiple_choice",
+        "prompt": "Gracias ___ tu ayuda.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por"
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "Estudio ___ aprender.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "para"
+      }
     ]
   },
   {
@@ -70,13 +165,27 @@
     "subcategory": "a_personal",
     "rule_type": "constructional",
     "title": "A personal (objeto directo de persona)",
-    "explanation_es": "Con un objeto directo humano específico, se usa la \"a\" personal: \"veo a Juan\".",
+    "learner_explanation": "Con un objeto directo humano específico, se usa la \"a\" personal: \"veo a Juan\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Veo Juan todos los días.", "good": "Veo a Juan todos los días." },
-      { "bad": "Conozco María.", "good": "Conozco a María." }
+      {
+        "bad": "Veo Juan todos los días.",
+        "good": "Veo a Juan todos los días."
+      },
+      {
+        "bad": "Conozco María.",
+        "good": "Conozco a María."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -85,13 +194,27 @@
     "subcategory": "clitic_order",
     "rule_type": "constructional",
     "title": "Orden de pronombres átonos (me/te/se/nos/os + lo/la/los/las)",
-    "explanation_es": "Cuando hay dos pronombres, primero va el indirecto (me/te/se/nos/os/le→se) y después el directo (lo/la/los/las).",
+    "learner_explanation": "Cuando hay dos pronombres, primero va el indirecto (me/te/se/nos/os/le→se) y después el directo (lo/la/los/las).",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Lo me dio.", "good": "Me lo dio." },
-      { "bad": "Le lo expliqué.", "good": "Se lo expliqué." }
+      {
+        "bad": "Lo me dio.",
+        "good": "Me lo dio."
+      },
+      {
+        "bad": "Le lo expliqué.",
+        "good": "Se lo expliqué."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Reordena: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Reordena: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -100,13 +223,27 @@
     "subcategory": "mood",
     "rule_type": "constructional",
     "title": "Subjuntivo tras verbos de deseo/recomendación",
-    "explanation_es": "Después de verbos como querer, recomendar, esperar, pedir, se usa \"que\" + subjuntivo.",
+    "learner_explanation": "Después de verbos como querer, recomendar, esperar, pedir, se usa \"que\" + subjuntivo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Quiero que vienes mañana.", "good": "Quiero que vengas mañana." },
-      { "bad": "Te recomiendo que vas temprano.", "good": "Te recomiendo que vayas temprano." }
+      {
+        "bad": "Quiero que vienes mañana.",
+        "good": "Quiero que vengas mañana."
+      },
+      {
+        "bad": "Te recomiendo que vas temprano.",
+        "good": "Te recomiendo que vayas temprano."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Quiero que ___ mañana. (venir)", "answer": "vengas" }
+      {
+        "type": "fill_blank",
+        "prompt": "Quiero que ___ mañana. (venir)",
+        "answer": "vengas"
+      }
     ]
   },
   {
@@ -115,13 +252,27 @@
     "subcategory": "mood",
     "rule_type": "constructional",
     "title": "Subjuntivo tras expresiones de duda/negación",
-    "explanation_es": "Después de expresiones como \"no creo que\", \"dudo que\", \"es posible que\", se usa subjuntivo.",
+    "learner_explanation": "Después de expresiones como \"no creo que\", \"dudo que\", \"es posible que\", se usa subjuntivo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "No creo que tiene razón.", "good": "No creo que tenga razón." },
-      { "bad": "Dudo que viene.", "good": "Dudo que venga." }
+      {
+        "bad": "No creo que tiene razón.",
+        "good": "No creo que tenga razón."
+      },
+      {
+        "bad": "Dudo que viene.",
+        "good": "Dudo que venga."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "No creo que ___ razón. (tener)", "answer": "tenga" }
+      {
+        "type": "fill_blank",
+        "prompt": "No creo que ___ razón. (tener)",
+        "answer": "tenga"
+      }
     ]
   },
   {
@@ -130,13 +281,27 @@
     "subcategory": "mood",
     "rule_type": "constructional",
     "title": "Subjuntivo tras expresiones de emoción",
-    "explanation_es": "Después de expresiones de emoción como \"me alegra que\", \"es triste que\", se usa subjuntivo.",
+    "learner_explanation": "Después de expresiones de emoción como \"me alegra que\", \"es triste que\", se usa subjuntivo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Me alegra que estás aquí.", "good": "Me alegra que estés aquí." },
-      { "bad": "Es triste que no puede venir.", "good": "Es triste que no pueda venir." }
+      {
+        "bad": "Me alegra que estás aquí.",
+        "good": "Me alegra que estés aquí."
+      },
+      {
+        "bad": "Es triste que no puede venir.",
+        "good": "Es triste que no pueda venir."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Me alegra que ___ aquí. (estar)", "answer": "estés" }
+      {
+        "type": "fill_blank",
+        "prompt": "Me alegra que ___ aquí. (estar)",
+        "answer": "estés"
+      }
     ]
   },
   {
@@ -145,13 +310,31 @@
     "subcategory": "tense",
     "rule_type": "constructional",
     "title": "Pretérito vs. imperfecto (acción puntual vs. contexto/hábito)",
-    "explanation_es": "El pretérito se usa para acciones completadas; el imperfecto para descripciones, hábitos o acciones en progreso en el pasado.",
+    "learner_explanation": "El pretérito se usa para acciones completadas; el imperfecto para descripciones, hábitos o acciones en progreso en el pasado.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Cuando era niño, fui al parque cada día.", "good": "Cuando era niño, iba al parque cada día." },
-      { "bad": "Ayer llovía cuando llegaba.", "good": "Ayer llovía cuando llegué." }
+      {
+        "bad": "Cuando era niño, fui al parque cada día.",
+        "good": "Cuando era niño, iba al parque cada día."
+      },
+      {
+        "bad": "Ayer llovía cuando llegaba.",
+        "good": "Ayer llovía cuando llegué."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "Cuando era niño, ___ al parque cada día.", "options": ["fui", "iba"], "answer": "iba" }
+      {
+        "type": "multiple_choice",
+        "prompt": "Cuando era niño, ___ al parque cada día.",
+        "options": [
+          "fui",
+          "iba"
+        ],
+        "answer": "iba"
+      }
     ]
   },
   {
@@ -160,15 +343,36 @@
     "subcategory": "construction",
     "rule_type": "constructional",
     "title": "Construcción con gustar (me gusta / me gustan)",
-    "explanation_es": "Con verbos como gustar, encantar, molestar, el sujeto gramatical es lo que gusta, no la persona.",
+    "learner_explanation": "Con verbos como gustar, encantar, molestar, el sujeto gramatical es lo que gusta, no la persona.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Me gusto el libro.", "good": "Me gusta el libro." },
-      { "bad": "Me gusta los libros.", "good": "Me gustan los libros." },
-      { "bad": "Yo gusto el café.", "good": "Me gusta el café." }
+      {
+        "bad": "Me gusto el libro.",
+        "good": "Me gusta el libro."
+      },
+      {
+        "bad": "Me gusta los libros.",
+        "good": "Me gustan los libros."
+      },
+      {
+        "bad": "Yo gusto el café.",
+        "good": "Me gusta el café."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Me ___ los libros. (gustar)", "answer": "gustan" },
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "fill_blank",
+        "prompt": "Me ___ los libros. (gustar)",
+        "answer": "gustan"
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -177,13 +381,31 @@
     "subcategory": "construction",
     "rule_type": "constructional",
     "title": "Hay vs. estar (existencia vs. ubicación)",
-    "explanation_es": "\"Hay\" introduce algo nuevo o indefinido (existencia). \"Estar\" ubica algo ya conocido o definido.",
+    "learner_explanation": "\"Hay\" introduce algo nuevo o indefinido (existencia). \"Estar\" ubica algo ya conocido o definido.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Está un libro en la mesa.", "good": "Hay un libro en la mesa." },
-      { "bad": "Hay el libro en la mesa.", "good": "El libro está en la mesa." }
+      {
+        "bad": "Está un libro en la mesa.",
+        "good": "Hay un libro en la mesa."
+      },
+      {
+        "bad": "Hay el libro en la mesa.",
+        "good": "El libro está en la mesa."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "___ un libro en la mesa.", "options": ["Hay", "Está"], "answer": "Hay" }
+      {
+        "type": "multiple_choice",
+        "prompt": "___ un libro en la mesa.",
+        "options": [
+          "Hay",
+          "Está"
+        ],
+        "answer": "Hay"
+      }
     ]
   },
   {
@@ -192,14 +414,40 @@
     "subcategory": "construction",
     "rule_type": "constructional",
     "title": "Saber vs. conocer",
-    "explanation_es": "\"Saber\" se usa para información/habilidades. \"Conocer\" para personas, lugares, o familiaridad.",
+    "learner_explanation": "\"Saber\" se usa para información/habilidades. \"Conocer\" para personas, lugares, o familiaridad.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Conozco hablar español.", "good": "Sé hablar español." },
-      { "bad": "Sé a María.", "good": "Conozco a María." }
+      {
+        "bad": "Conozco hablar español.",
+        "good": "Sé hablar español."
+      },
+      {
+        "bad": "Sé a María.",
+        "good": "Conozco a María."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "___ hablar español.", "options": ["Sé", "Conozco"], "answer": "Sé" },
-      { "type": "multiple_choice", "prompt": "___ a María.", "options": ["Sé", "Conozco"], "answer": "Conozco" }
+      {
+        "type": "multiple_choice",
+        "prompt": "___ hablar español.",
+        "options": [
+          "Sé",
+          "Conozco"
+        ],
+        "answer": "Sé"
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "___ a María.",
+        "options": [
+          "Sé",
+          "Conozco"
+        ],
+        "answer": "Conozco"
+      }
     ]
   },
   {
@@ -208,14 +456,32 @@
     "subcategory": "object",
     "rule_type": "constructional",
     "title": "Pronombres de objeto directo vs. indirecto (lo/la vs. le)",
-    "explanation_es": "\"Lo/la\" reemplazan objetos directos. \"Le\" reemplaza objetos indirectos (a quién se da/dice algo).",
+    "learner_explanation": "\"Lo/la\" reemplazan objetos directos. \"Le\" reemplaza objetos indirectos (a quién se da/dice algo).",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Le vi ayer.", "good": "Lo vi ayer." },
-      { "bad": "Lo di el libro.", "good": "Le di el libro." }
+      {
+        "bad": "Le vi ayer.",
+        "good": "Lo vi ayer."
+      },
+      {
+        "bad": "Lo di el libro.",
+        "good": "Le di el libro."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ vi ayer. (a él)", "answer": "Lo" },
-      { "type": "fill_blank", "prompt": "___ di el libro. (a ella)", "answer": "Le" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ vi ayer. (a él)",
+        "answer": "Lo"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "___ di el libro. (a ella)",
+        "answer": "Le"
+      }
     ]
   },
   {
@@ -224,13 +490,27 @@
     "subcategory": "reflexive",
     "rule_type": "constructional",
     "title": "Verbos reflexivos obligatorios",
-    "explanation_es": "Algunos verbos requieren pronombre reflexivo: arrepentirse, quejarse, atreverse, etc.",
+    "learner_explanation": "Algunos verbos requieren pronombre reflexivo: arrepentirse, quejarse, atreverse, etc.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Arrepiento de mis errores.", "good": "Me arrepiento de mis errores." },
-      { "bad": "Atrevo a decirlo.", "good": "Me atrevo a decirlo." }
+      {
+        "bad": "Arrepiento de mis errores.",
+        "good": "Me arrepiento de mis errores."
+      },
+      {
+        "bad": "Atrevo a decirlo.",
+        "good": "Me atrevo a decirlo."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -239,13 +519,31 @@
     "subcategory": "reflexive",
     "rule_type": "constructional",
     "title": "Reflexivo vs. no reflexivo (cambio de significado)",
-    "explanation_es": "Algunos verbos cambian de significado con/sin reflexivo: ir/irse, dormir/dormirse, etc.",
+    "learner_explanation": "Algunos verbos cambian de significado con/sin reflexivo: ir/irse, dormir/dormirse, etc.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Me fui a la tienda.", "good": "Fui a la tienda." },
-      { "bad": "El niño duerme a las 9.", "good": "El niño se duerme a las 9." }
+      {
+        "bad": "Me fui a la tienda.",
+        "good": "Fui a la tienda."
+      },
+      {
+        "bad": "El niño duerme a las 9.",
+        "good": "El niño se duerme a las 9."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "El niño ___ a las 9. (empieza a dormir)", "options": ["duerme", "se duerme"], "answer": "se duerme" }
+      {
+        "type": "multiple_choice",
+        "prompt": "El niño ___ a las 9. (empieza a dormir)",
+        "options": [
+          "duerme",
+          "se duerme"
+        ],
+        "answer": "se duerme"
+      }
     ]
   },
   {
@@ -254,13 +552,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"problema\" es masculino",
-    "explanation_es": "\"Problema\" termina en -a pero es masculino: \"el problema\", \"un problema\".",
+    "learner_explanation": "\"Problema\" termina en -a pero es masculino: \"el problema\", \"un problema\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la problema", "good": "el problema" },
-      { "bad": "una problema grave", "good": "un problema grave" }
+      {
+        "bad": "la problema",
+        "good": "el problema"
+      },
+      {
+        "bad": "una problema grave",
+        "good": "un problema grave"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ problema es serio.", "answer": "El" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ problema es serio.",
+        "answer": "El"
+      }
     ]
   },
   {
@@ -269,13 +581,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"tema\" es masculino",
-    "explanation_es": "\"Tema\" termina en -a pero es masculino: \"el tema\", \"un tema\".",
+    "learner_explanation": "\"Tema\" termina en -a pero es masculino: \"el tema\", \"un tema\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la tema principal", "good": "el tema principal" },
-      { "bad": "una tema interesante", "good": "un tema interesante" }
+      {
+        "bad": "la tema principal",
+        "good": "el tema principal"
+      },
+      {
+        "bad": "una tema interesante",
+        "good": "un tema interesante"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ tema es interesante.", "answer": "El" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ tema es interesante.",
+        "answer": "El"
+      }
     ]
   },
   {
@@ -284,13 +610,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"sistema\" es masculino",
-    "explanation_es": "\"Sistema\" termina en -a pero es masculino: \"el sistema\", \"un sistema\".",
+    "learner_explanation": "\"Sistema\" termina en -a pero es masculino: \"el sistema\", \"un sistema\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la sistema operativa", "good": "el sistema operativo" },
-      { "bad": "una sistema nueva", "good": "un sistema nuevo" }
+      {
+        "bad": "la sistema operativa",
+        "good": "el sistema operativo"
+      },
+      {
+        "bad": "una sistema nueva",
+        "good": "un sistema nuevo"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ sistema funciona bien.", "answer": "El" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ sistema funciona bien.",
+        "answer": "El"
+      }
     ]
   },
   {
@@ -299,13 +639,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"mapa\" es masculino",
-    "explanation_es": "\"Mapa\" termina en -a pero es masculino: \"el mapa\", \"un mapa\".",
+    "learner_explanation": "\"Mapa\" termina en -a pero es masculino: \"el mapa\", \"un mapa\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la mapa", "good": "el mapa" },
-      { "bad": "una mapa grande", "good": "un mapa grande" }
+      {
+        "bad": "la mapa",
+        "good": "el mapa"
+      },
+      {
+        "bad": "una mapa grande",
+        "good": "un mapa grande"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Necesito ___ mapa de la ciudad.", "answer": "un" }
+      {
+        "type": "fill_blank",
+        "prompt": "Necesito ___ mapa de la ciudad.",
+        "answer": "un"
+      }
     ]
   },
   {
@@ -314,13 +668,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"día\" es masculino",
-    "explanation_es": "\"Día\" termina en -a pero es masculino: \"el día\", \"un día\".",
+    "learner_explanation": "\"Día\" termina en -a pero es masculino: \"el día\", \"un día\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "la día", "good": "el día" },
-      { "bad": "una día bonita", "good": "un día bonito" }
+      {
+        "bad": "la día",
+        "good": "el día"
+      },
+      {
+        "bad": "una día bonita",
+        "good": "un día bonito"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Hoy es ___ día especial.", "answer": "un" }
+      {
+        "type": "fill_blank",
+        "prompt": "Hoy es ___ día especial.",
+        "answer": "un"
+      }
     ]
   },
   {
@@ -329,13 +697,27 @@
     "subcategory": "exceptions",
     "rule_type": "lexical",
     "title": "Género léxico: \"mano\" es femenino",
-    "explanation_es": "\"Mano\" termina en -o pero es femenino: \"la mano\", \"una mano\".",
+    "learner_explanation": "\"Mano\" termina en -o pero es femenino: \"la mano\", \"una mano\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "el mano derecho", "good": "la mano derecha" },
-      { "bad": "un mano", "good": "una mano" }
+      {
+        "bad": "el mano derecho",
+        "good": "la mano derecha"
+      },
+      {
+        "bad": "un mano",
+        "good": "una mano"
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Dame ___ mano.", "answer": "la" }
+      {
+        "type": "fill_blank",
+        "prompt": "Dame ___ mano.",
+        "answer": "la"
+      }
     ]
   },
   {
@@ -344,13 +726,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: depender de",
-    "explanation_es": "El verbo \"depender\" se construye con \"de\": \"depender de algo\".",
+    "learner_explanation": "El verbo \"depender\" se construye con \"de\": \"depender de algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Depende en el clima.", "good": "Depende del clima." },
-      { "bad": "Eso depende en ti.", "good": "Eso depende de ti." }
+      {
+        "bad": "Depende en el clima.",
+        "good": "Depende del clima."
+      },
+      {
+        "bad": "Eso depende en ti.",
+        "good": "Eso depende de ti."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -359,13 +755,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: pensar en",
-    "explanation_es": "Para 'think about', se usa \"pensar en\": \"pensar en algo\".",
+    "learner_explanation": "Para 'think about', se usa \"pensar en\": \"pensar en algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Pienso sobre mi futuro.", "good": "Pienso en mi futuro." },
-      { "bad": "Estoy pensando sobre eso.", "good": "Estoy pensando en eso." }
+      {
+        "bad": "Pienso sobre mi futuro.",
+        "good": "Pienso en mi futuro."
+      },
+      {
+        "bad": "Estoy pensando sobre eso.",
+        "good": "Estoy pensando en eso."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -374,13 +784,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: soñar con",
-    "explanation_es": "El verbo \"soñar\" se construye con \"con\": \"soñar con algo\".",
+    "learner_explanation": "El verbo \"soñar\" se construye con \"con\": \"soñar con algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Soñé sobre ti.", "good": "Soñé contigo." },
-      { "bad": "Sueño de ser médico.", "good": "Sueño con ser médico." }
+      {
+        "bad": "Soñé sobre ti.",
+        "good": "Soñé contigo."
+      },
+      {
+        "bad": "Sueño de ser médico.",
+        "good": "Sueño con ser médico."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -389,13 +813,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: insistir en",
-    "explanation_es": "El verbo \"insistir\" se construye con \"en\": \"insistir en algo\".",
+    "learner_explanation": "El verbo \"insistir\" se construye con \"en\": \"insistir en algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Insisto que vengas.", "good": "Insisto en que vengas." },
-      { "bad": "Insistió sobre el tema.", "good": "Insistió en el tema." }
+      {
+        "bad": "Insisto que vengas.",
+        "good": "Insisto en que vengas."
+      },
+      {
+        "bad": "Insistió sobre el tema.",
+        "good": "Insistió en el tema."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -404,13 +842,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: consistir en",
-    "explanation_es": "El verbo \"consistir\" se construye con \"en\": \"consistir en algo\".",
+    "learner_explanation": "El verbo \"consistir\" se construye con \"en\": \"consistir en algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "El trabajo consiste de tres partes.", "good": "El trabajo consiste en tres partes." },
-      { "bad": "Consiste sobre hacer ejercicio.", "good": "Consiste en hacer ejercicio." }
+      {
+        "bad": "El trabajo consiste de tres partes.",
+        "good": "El trabajo consiste en tres partes."
+      },
+      {
+        "bad": "Consiste sobre hacer ejercicio.",
+        "good": "Consiste en hacer ejercicio."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -419,13 +871,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: contar con",
-    "explanation_es": "\"Contar con\" significa 'rely on'. \"Contar\" solo significa 'to count/tell'.",
+    "learner_explanation": "\"Contar con\" significa 'rely on'. \"Contar\" solo significa 'to count/tell'.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Cuento en ti.", "good": "Cuento contigo." },
-      { "bad": "Puedes contar en mí.", "good": "Puedes contar conmigo." }
+      {
+        "bad": "Cuento en ti.",
+        "good": "Cuento contigo."
+      },
+      {
+        "bad": "Puedes contar en mí.",
+        "good": "Puedes contar conmigo."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -434,13 +900,27 @@
     "subcategory": "verb_frame",
     "rule_type": "lexical",
     "title": "Marco verbal: fijarse en",
-    "explanation_es": "El verbo \"fijarse\" se construye con \"en\": \"fijarse en algo\".",
+    "learner_explanation": "El verbo \"fijarse\" se construye con \"en\": \"fijarse en algo\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Fíjate a esto.", "good": "Fíjate en esto." },
-      { "bad": "No me fijé sobre eso.", "good": "No me fijé en eso." }
+      {
+        "bad": "Fíjate a esto.",
+        "good": "Fíjate en esto."
+      },
+      {
+        "bad": "No me fijé sobre eso.",
+        "good": "No me fijé en eso."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -449,13 +929,27 @@
     "subcategory": "direction",
     "rule_type": "constructional",
     "title": "Preposición de dirección: a (no en)",
-    "explanation_es": "Para indicar destino o dirección, se usa \"a\", no \"en\": \"voy a casa\", no \"voy en casa\".",
+    "learner_explanation": "Para indicar destino o dirección, se usa \"a\", no \"en\": \"voy a casa\", no \"voy en casa\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Voy en casa.", "good": "Voy a casa." },
-      { "bad": "Llegamos en Madrid.", "good": "Llegamos a Madrid." }
+      {
+        "bad": "Voy en casa.",
+        "good": "Voy a casa."
+      },
+      {
+        "bad": "Llegamos en Madrid.",
+        "good": "Llegamos a Madrid."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Voy ___ casa.", "answer": "a" }
+      {
+        "type": "fill_blank",
+        "prompt": "Voy ___ casa.",
+        "answer": "a"
+      }
     ]
   },
   {
@@ -464,13 +958,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: embarazado ≠ embarrassed",
-    "explanation_es": "\"Embarazado/a\" significa pregnant, no embarrassed. Para 'embarrassed', usa \"avergonzado\" o \"me da vergüenza\".",
+    "learner_explanation": "\"Embarazado/a\" significa pregnant, no embarrassed. Para 'embarrassed', usa \"avergonzado\" o \"me da vergüenza\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Estoy embarazado porque llegué tarde.", "good": "Estoy avergonzado porque llegué tarde." },
-      { "bad": "Ella está muy embarazada por el error.", "good": "Ella está muy avergonzada por el error." }
+      {
+        "bad": "Estoy embarazado porque llegué tarde.",
+        "good": "Estoy avergonzado porque llegué tarde."
+      },
+      {
+        "bad": "Ella está muy embarazada por el error.",
+        "good": "Ella está muy avergonzada por el error."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "I'm embarrassed = Estoy ___", "options": ["embarazado", "avergonzado"], "answer": "avergonzado" }
+      {
+        "type": "multiple_choice",
+        "prompt": "I'm embarrassed = Estoy ___",
+        "options": [
+          "embarazado",
+          "avergonzado"
+        ],
+        "answer": "avergonzado"
+      }
     ]
   },
   {
@@ -479,13 +991,27 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: realizar ≠ realize (darse cuenta)",
-    "explanation_es": "\"Realizar\" significa to carry out/accomplish. Para 'realize' (become aware), usa \"darse cuenta de\".",
+    "learner_explanation": "\"Realizar\" significa to carry out/accomplish. Para 'realize' (become aware), usa \"darse cuenta de\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Realicé que estaba equivocado.", "good": "Me di cuenta de que estaba equivocado." },
-      { "bad": "No realizó el problema.", "good": "No se dio cuenta del problema." }
+      {
+        "bad": "Realicé que estaba equivocado.",
+        "good": "Me di cuenta de que estaba equivocado."
+      },
+      {
+        "bad": "No realizó el problema.",
+        "good": "No se dio cuenta del problema."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "rewrite", "prompt": "Corrige: \"{{bad}}\"", "answer": "{{good}}" }
+      {
+        "type": "rewrite",
+        "prompt": "Corrige: \"{{bad}}\"",
+        "answer": "{{good}}"
+      }
     ]
   },
   {
@@ -494,13 +1020,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: actualmente ≠ actually",
-    "explanation_es": "\"Actualmente\" significa currently/nowadays. Para 'actually', usa \"en realidad\" o \"de hecho\".",
+    "learner_explanation": "\"Actualmente\" significa currently/nowadays. Para 'actually', usa \"en realidad\" o \"de hecho\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Actualmente, no me gusta.", "good": "En realidad, no me gusta." },
-      { "bad": "Actualmente es muy fácil.", "good": "De hecho, es muy fácil." }
+      {
+        "bad": "Actualmente, no me gusta.",
+        "good": "En realidad, no me gusta."
+      },
+      {
+        "bad": "Actualmente es muy fácil.",
+        "good": "De hecho, es muy fácil."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "Actually, I don't like it = ___, no me gusta.", "options": ["Actualmente", "En realidad"], "answer": "En realidad" }
+      {
+        "type": "multiple_choice",
+        "prompt": "Actually, I don't like it = ___, no me gusta.",
+        "options": [
+          "Actualmente",
+          "En realidad"
+        ],
+        "answer": "En realidad"
+      }
     ]
   },
   {
@@ -509,13 +1053,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: asistir ≠ assist (ayudar)",
-    "explanation_es": "\"Asistir\" significa to attend. Para 'assist/help', usa \"ayudar\".",
+    "learner_explanation": "\"Asistir\" significa to attend. Para 'assist/help', usa \"ayudar\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Te voy a asistir con la tarea.", "good": "Te voy a ayudar con la tarea." },
-      { "bad": "Necesito que me asistas.", "good": "Necesito que me ayudes." }
+      {
+        "bad": "Te voy a asistir con la tarea.",
+        "good": "Te voy a ayudar con la tarea."
+      },
+      {
+        "bad": "Necesito que me asistas.",
+        "good": "Necesito que me ayudes."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "I'll help you = Te voy a ___", "options": ["asistir", "ayudar"], "answer": "ayudar" }
+      {
+        "type": "multiple_choice",
+        "prompt": "I'll help you = Te voy a ___",
+        "options": [
+          "asistir",
+          "ayudar"
+        ],
+        "answer": "ayudar"
+      }
     ]
   },
   {
@@ -524,13 +1086,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: éxito ≠ exit (salida)",
-    "explanation_es": "\"Éxito\" significa success. Para 'exit', usa \"salida\".",
+    "learner_explanation": "\"Éxito\" significa success. Para 'exit', usa \"salida\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "¿Dónde está el éxito?", "good": "¿Dónde está la salida?" },
-      { "bad": "Busco el éxito de emergencia.", "good": "Busco la salida de emergencia." }
+      {
+        "bad": "¿Dónde está el éxito?",
+        "good": "¿Dónde está la salida?"
+      },
+      {
+        "bad": "Busco el éxito de emergencia.",
+        "good": "Busco la salida de emergencia."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "Where is the exit? = ¿Dónde está ___?", "options": ["el éxito", "la salida"], "answer": "la salida" }
+      {
+        "type": "multiple_choice",
+        "prompt": "Where is the exit? = ¿Dónde está ___?",
+        "options": [
+          "el éxito",
+          "la salida"
+        ],
+        "answer": "la salida"
+      }
     ]
   },
   {
@@ -539,13 +1119,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: sensible ≠ sensible (sensato)",
-    "explanation_es": "\"Sensible\" significa sensitive. Para 'sensible' (reasonable), usa \"sensato\" o \"razonable\".",
+    "learner_explanation": "\"Sensible\" significa sensitive. Para 'sensible' (reasonable), usa \"sensato\" o \"razonable\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Es una decisión muy sensible.", "good": "Es una decisión muy sensata." },
-      { "bad": "Sé sensible, no hagas eso.", "good": "Sé sensato, no hagas eso." }
+      {
+        "bad": "Es una decisión muy sensible.",
+        "good": "Es una decisión muy sensata."
+      },
+      {
+        "bad": "Sé sensible, no hagas eso.",
+        "good": "Sé sensato, no hagas eso."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "A sensible decision = Una decisión ___", "options": ["sensible", "sensata"], "answer": "sensata" }
+      {
+        "type": "multiple_choice",
+        "prompt": "A sensible decision = Una decisión ___",
+        "options": [
+          "sensible",
+          "sensata"
+        ],
+        "answer": "sensata"
+      }
     ]
   },
   {
@@ -554,13 +1152,31 @@
     "subcategory": "false_cognate",
     "rule_type": "lexical",
     "title": "Falso cognado: librería ≠ library (biblioteca)",
-    "explanation_es": "\"Librería\" significa bookstore. Para 'library', usa \"biblioteca\".",
+    "learner_explanation": "\"Librería\" significa bookstore. Para 'library', usa \"biblioteca\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Voy a estudiar en la librería.", "good": "Voy a estudiar en la biblioteca." },
-      { "bad": "Saqué el libro de la librería.", "good": "Saqué el libro de la biblioteca." }
+      {
+        "bad": "Voy a estudiar en la librería.",
+        "good": "Voy a estudiar en la biblioteca."
+      },
+      {
+        "bad": "Saqué el libro de la librería.",
+        "good": "Saqué el libro de la biblioteca."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "I study at the library = Estudio en la ___", "options": ["librería", "biblioteca"], "answer": "biblioteca" }
+      {
+        "type": "multiple_choice",
+        "prompt": "I study at the library = Estudio en la ___",
+        "options": [
+          "librería",
+          "biblioteca"
+        ],
+        "answer": "biblioteca"
+      }
     ]
   },
   {
@@ -569,13 +1185,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tomar una decisión (no hacer)",
-    "explanation_es": "En español se dice \"tomar una decisión\", no \"hacer una decisión\".",
+    "learner_explanation": "En español se dice \"tomar una decisión\", no \"hacer una decisión\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Necesito hacer una decisión.", "good": "Necesito tomar una decisión." },
-      { "bad": "Hice la decisión correcta.", "good": "Tomé la decisión correcta." }
+      {
+        "bad": "Necesito hacer una decisión.",
+        "good": "Necesito tomar una decisión."
+      },
+      {
+        "bad": "Hice la decisión correcta.",
+        "good": "Tomé la decisión correcta."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Necesito ___ una decisión.", "answer": "tomar" }
+      {
+        "type": "fill_blank",
+        "prompt": "Necesito ___ una decisión.",
+        "answer": "tomar"
+      }
     ]
   },
   {
@@ -584,13 +1214,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: hacer una pregunta (no preguntar una pregunta)",
-    "explanation_es": "En español se dice \"hacer una pregunta\", no \"preguntar una pregunta\".",
+    "learner_explanation": "En español se dice \"hacer una pregunta\", no \"preguntar una pregunta\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Quiero preguntar una pregunta.", "good": "Quiero hacer una pregunta." },
-      { "bad": "Preguntó muchas preguntas.", "good": "Hizo muchas preguntas." }
+      {
+        "bad": "Quiero preguntar una pregunta.",
+        "good": "Quiero hacer una pregunta."
+      },
+      {
+        "bad": "Preguntó muchas preguntas.",
+        "good": "Hizo muchas preguntas."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "Quiero ___ una pregunta.", "answer": "hacer" }
+      {
+        "type": "fill_blank",
+        "prompt": "Quiero ___ una pregunta.",
+        "answer": "hacer"
+      }
     ]
   },
   {
@@ -599,13 +1243,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tener X años (no ser X años)",
-    "explanation_es": "Para expresar edad, se usa \"tener\", no \"ser\": \"Tengo 25 años\".",
+    "learner_explanation": "Para expresar edad, se usa \"tener\", no \"ser\": \"Tengo 25 años\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Soy 25 años.", "good": "Tengo 25 años." },
-      { "bad": "Mi hermana es 30 años.", "good": "Mi hermana tiene 30 años." }
+      {
+        "bad": "Soy 25 años.",
+        "good": "Tengo 25 años."
+      },
+      {
+        "bad": "Mi hermana es 30 años.",
+        "good": "Mi hermana tiene 30 años."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ 25 años.", "answer": "Tengo" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ 25 años.",
+        "answer": "Tengo"
+      }
     ]
   },
   {
@@ -614,13 +1272,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tener hambre/sed/frío/calor (no estar)",
-    "explanation_es": "Para sensaciones físicas se usa \"tener\": tener hambre, sed, frío, calor, sueño, miedo.",
+    "learner_explanation": "Para sensaciones físicas se usa \"tener\": tener hambre, sed, frío, calor, sueño, miedo.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Estoy hambre.", "good": "Tengo hambre." },
-      { "bad": "Estoy mucho frío.", "good": "Tengo mucho frío." }
+      {
+        "bad": "Estoy hambre.",
+        "good": "Tengo hambre."
+      },
+      {
+        "bad": "Estoy mucho frío.",
+        "good": "Tengo mucho frío."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "___ hambre.", "answer": "Tengo" }
+      {
+        "type": "fill_blank",
+        "prompt": "___ hambre.",
+        "answer": "Tengo"
+      }
     ]
   },
   {
@@ -629,12 +1301,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tener sueño (no estar cansado para 'sleepy')",
-    "explanation_es": "Para 'sleepy', usa \"tener sueño\". \"Estar cansado\" significa tired, not sleepy.",
+    "learner_explanation": "Para 'sleepy', usa \"tener sueño\". \"Estar cansado\" significa tired, not sleepy.",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Estoy muy cansado, necesito dormir.", "good": "Tengo mucho sueño, necesito dormir." }
+      {
+        "bad": "Estoy muy cansado, necesito dormir.",
+        "good": "Tengo mucho sueño, necesito dormir."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "multiple_choice", "prompt": "I'm sleepy = ___ sueño", "options": ["Estoy", "Tengo"], "answer": "Tengo" }
+      {
+        "type": "multiple_choice",
+        "prompt": "I'm sleepy = ___ sueño",
+        "options": [
+          "Estoy",
+          "Tengo"
+        ],
+        "answer": "Tengo"
+      }
     ]
   },
   {
@@ -643,13 +1330,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tener razón (no ser correcto)",
-    "explanation_es": "Para 'to be right', usa \"tener razón\", no \"ser correcto\".",
+    "learner_explanation": "Para 'to be right', usa \"tener razón\", no \"ser correcto\".",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Eres correcto sobre eso.", "good": "Tienes razón sobre eso." },
-      { "bad": "Creo que soy correcto.", "good": "Creo que tengo razón." }
+      {
+        "bad": "Eres correcto sobre eso.",
+        "good": "Tienes razón sobre eso."
+      },
+      {
+        "bad": "Creo que soy correcto.",
+        "good": "Creo que tengo razón."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "You're right = ___ razón.", "answer": "Tienes" }
+      {
+        "type": "fill_blank",
+        "prompt": "You're right = ___ razón.",
+        "answer": "Tienes"
+      }
     ]
   },
   {
@@ -658,13 +1359,27 @@
     "subcategory": "collocation",
     "rule_type": "lexical",
     "title": "Colocación: tener sentido (no hacer sentido)",
-    "explanation_es": "En español se dice \"tener sentido\", no \"hacer sentido\" (anglicismo).",
+    "learner_explanation": "En español se dice \"tener sentido\", no \"hacer sentido\" (anglicismo).",
+    "minimal_correction_policy": "Change only the smallest span needed to repair this grammar pattern. Do not rewrite surrounding prose.",
     "examples": [
-      { "bad": "Eso no hace sentido.", "good": "Eso no tiene sentido." },
-      { "bad": "Hace mucho sentido.", "good": "Tiene mucho sentido." }
+      {
+        "bad": "Eso no hace sentido.",
+        "good": "Eso no tiene sentido."
+      },
+      {
+        "bad": "Hace mucho sentido.",
+        "good": "Tiene mucho sentido."
+      }
+    ],
+    "do_not_flag": [
+      "Do not flag style, tone, or vocabulary preference without this exact rule pattern."
     ],
     "drill_templates": [
-      { "type": "fill_blank", "prompt": "That makes sense = Eso ___ sentido.", "answer": "tiene" }
+      {
+        "type": "fill_blank",
+        "prompt": "That makes sense = Eso ___ sentido.",
+        "answer": "tiene"
+      }
     ]
   }
 ]

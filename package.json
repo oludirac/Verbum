@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:compile": "tsc -p tsconfig.test.json",
+    "test:unit": "npm run test:compile && node .test-build/tests/run-unit.js",
+    "test:live": "npm run test:compile && node .test-build/tests/run-golden.js",
+    "test": "npm run test:unit"
   },
   "dependencies": {
+    "lucide-react": "^1.21.0",
     "next": "16.1.3",
     "openai": "^6.16.0",
     "react": "19.2.3",

@@ -1,228 +1,120 @@
 # Verbum
 
-**Verbum is a Spanish writing accuracy engine.**  
-It diagnoses grammatical errors, maps them to explicit rule systems, and trains users through error-driven drills.
+Verbum is a personal Spanish grammar repair tool.
 
-It is not a writing assistant.  
-It is not a style coach.  
-It is not a rewriting tool.
+I use it to check Spanish writing, diagnose grammar problems, drill the exact patterns that failed, and rewrite the text in the same session. It is deliberately narrow: grammar first, minimal corrections, rule-backed explanations.
 
-Verbum treats Spanish grammar as a **set of testable systems** and learner writing as **data for diagnostics and training.**
+It is not a Spanish course, a prose-polishing assistant, a style coach, or a progress app.
 
----
+## Loop
 
-## Core idea
+Verbum is built around one working loop:
 
-Verbum helps learners answer:
+1. Write Spanish.
+2. Diagnose rule-backed grammar and curated usage issues.
+3. Explain the issue from the rule bank.
+4. Drill the pattern that actually failed.
+5. Rewrite the text.
+6. Compare the rewrite with the previous attempt in the current session.
 
-- What grammatical systems am I failing?
-- Which errors are recurring?
-- Which drills reduce them?
-- Which constructions are non-native and persistent?
+There is no database in V0. Measurement is only an in-session comparison between the current rewrite and the previous diagnosis.
 
-The product is built around a closed loop:
-
-**Write → Diagnose → Explain → Drill → Rewrite → Measure**
-
----
-
-## What Verbum focuses on
+## What It Checks
 
 Included:
-- grammar
+
+- agreement
 - morphology
 - syntax
-- agreement
 - verb systems
 - mood and tense
 - prepositions
-- collocations / verb frames
+- verb frames
 - construction choice
-- orthography (when grammatical)
+- curated false cognates and collocations when they are explicitly in the rule bank
 
-Explicitly excluded:
-- style feedback
-- tone coaching
-- elegance or prose improvement
-- vocabulary enrichment
-- creative rewriting
+Excluded from V0:
 
-Corrections are always **minimal edits** tied to a **specific grammatical rule.**
+- prose improvement
+- tone
+- style
+- elegance
+- general vocabulary enrichment
+- generic tutoring
+- long-term progress tracking
 
----
+Prose and naturalness may become a separate mode later. They should not blur the grammar engine.
 
-## Product philosophy
+## Architecture
 
-- Grammar is diagnostics, not feedback.  
-- Learning comes from error-driven practice, not tips.  
-- The rule bank is the product. The app is the interface.  
-- Anything that cannot be mapped to a grammatical system does not belong.
+The model proposes candidate diagnostics. The server decides what survives.
 
-Verbum is closer to a **compiler + diagnostics + training loop** than to Grammarly.
+1. Detection layer: LLM candidate errors using structured output.
+2. Validation layer: schema, rule whitelist, span checks, minimal-edit checks.
+3. Rule bank: versioned grammar and usage rules.
+4. Correction layer: server-applied minimal edits.
+5. Drill generator: templates from validated errors only.
+6. Session comparison: current rewrite vs previous diagnosis, kept in browser state.
 
----
+Main folders:
 
-## Learner-first design
+- `/app` - Next.js App Router UI and API route
+- `/core` - analyzer, validation, scoring, drills, rule loading
+- `/rules` - rule bank
+- `/prompts` - model prompt
+- `/product` - product notes and contracts
+- `/tests` - deterministic unit tests and optional live golden tests
 
-Verbum is built learner-first, not developer-first.
+## Local Setup
 
-Primary UI must:
+Copy the env template:
 
-hide internal system codes and classifications
+```bash
+cp .env.example .env.local
+```
 
-present errors as actionable corrections, not diagnostics jargon
+Set:
 
-emphasize practice and rewriting over inspection
+```bash
+OPENAI_API_KEY=
+VERBUM_MODEL=gpt-4.1-mini
+```
 
-require user effort before revealing answers
+Run:
 
-Debug and ontology data belong in secondary views, not the main experience.
+```bash
+npm install
+npm run dev
+```
 
----
+Open `http://localhost:3000`.
 
-## System architecture (intent)
+## Tests
 
-The system is layered by design:
+Default tests do not call OpenAI:
 
-1. Detection layer (LLM-assisted)  
-2. Validation layer (schema, rule whitelist, span checks)  
-3. Rule bank (versioned, authoritative)  
-4. Correction layer (minimal edits only)  
-5. Drill generator (rule-templated, error-driven)  
-6. Persistence layer (errors, recurrences, outcomes)
+```bash
+npm test
+```
 
-LLMs detect.  
-The system decides.  
-The rule bank explains.  
-The drills train.
+Useful checks:
 
-No layer is allowed to collapse into another.
+```bash
+npm run lint
+npm run build
+```
 
----
+Optional live model golden tests require the dev server and an API key:
 
-## Tech stack
+```bash
+npm run dev
+npm run test:live
+```
 
-### Current (v0 — shipping focus)
+## Current Limits
 
-- **Framework:** Next.js (App Router, TypeScript)  
-- **Styling:** Tailwind CSS  
-- **Hosting:** Vercel  
-- **AI:** LLM API (detection + drill generation)  
-- **State:** in-memory / mock persistence  
-
-There is **no database in v0.**  
-V0 exists to validate the learning loop, not data infrastructure.
-
----
-
-### Planned (after learning loop is proven)
-
-- **Database:** Supabase (PostgreSQL)  
-- **Auth:** Supabase Auth  
-- **Security:** Row Level Security (RLS)  
-- **Persistence:** submissions, errors, recurrence, drills, mastery signals  
-- **Optional ORM:** Prisma (only if Supabase client becomes limiting)
-
-Supabase is the intended persistence layer because it provides:
-- production-grade Postgres  
-- built-in auth  
-- strict access control  
-- clean Next.js + Vercel integration
-
-Prisma is explicitly optional, not default.
-
----
-
-## Repository structure
-
-/src/app UI (single writing loop)
-/src/app/api API routes
-/core validation, rule matching, drill generation
-/rules rule bank (versioned)
-/prompts LLM prompts (detection, drills)
-/product product contracts and vision
-/tests golden cases and evals
-
-yaml
-Copy code
-
----
-
-## Source of truth files
-
-- `product/context.md`  
-  Long-term product vision, philosophy, and system intent.
-
-- `product/SCOPE.md`  
-  What v0 includes and explicitly excludes.
-
-- `product/CONTRACT.md`  
-  Non-negotiable system behavior rules.
-
-- `product/JSON_SCHEMA.json`  
-  The strict API contract.
-
-All development (human or AI) must stay consistent with these.
-
----
-
-## V0 goal
-
-V0 exists only to prove one thing:
-
-That the loop  
-**writing → grammar diagnostics → error-driven drills → improved rewriting**  
-actually changes learner behavior.
-
-Coverage, dashboards, dialect systems, naturalness indices, and large ontologies come later.
-
----
-
-## Anti-goals
-
-Verbum is explicitly not building:
-
-- a Spanish Grammarly  
-- a rewriting assistant  
-- a style coach  
-- a tone optimizer  
-- a generic language app  
-
-If the system starts suggesting “better ways to say this,” something is wrong.
-
----
-
-## Success definition
-
-Verbum is succeeding when:
-
-- users resubmit writing  
-- the same grammatical errors decrease  
-- drills map clearly to improvements  
-- unmapped phenomena accumulate into new rules  
-- the rule bank becomes more valuable than the UI  
-
----
-
-## Development principles
-
-- Grammar only.  
-- Minimal edits only.  
-- Every correction must have a rule_id.  
-- No rule → unmapped.  
-- Drills only from real errors.  
-- Schema before prompts.  
-- Learning loop before features.
-
----
-
-## Next milestone
-
-Ship a minimal v0 where a learner can:
-
-1. write Spanish  
-2. receive structured grammar diagnostics  
-3. practice drills generated from their own errors  
-4. rewrite and resubmit  
-
-Nothing else ships before this works.
+- Rule coverage is intentionally small.
+- The grammar score is a rough diagnostic density score, not a fluency score.
+- The app does not persist history.
+- Unmapped issues are kept separate so the rule bank can grow without overcorrecting.
+- Corrections are intentionally minimal and may feel less fluent than a full rewrite.
