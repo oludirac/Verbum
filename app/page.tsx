@@ -8,7 +8,7 @@ import {
   RotateCcw,
   ScanText,
 } from "lucide-react";
-import { useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import ruleBank from "../rules/rule_bank_v0.json";
 
 type AnalyzeError = {
@@ -99,6 +99,11 @@ const formatCategory = (stat: CategoryStats) =>
   `${stat.category.toLowerCase().replace("_", " ")} / ${stat.subcategory}`;
 
 export default function Home() {
+  const [accessReady, setAccessReady] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [accessCode, setAccessCode] = useState("");
+  const [accessError, setAccessError] = useState<string | null>(null);
+  const [isCheckingAccess, setIsCheckingAccess] = useState(false);
   const [text, setText] = useState(DEFAULT_TEXT);
   const [result, setResult] = useState<AnalyzeResponse | null>(null);
   const [lastResult, setLastResult] = useState<AnalyzeResponse | null>(null);
@@ -114,6 +119,64 @@ export default function Home() {
   const ruleMap = new Map(
     (ruleBank as RuleSummary[]).map((rule) => [rule.rule_id, rule])
   );
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const checkAccess = async () => {
+      try {
+        const response = await fetch("/api/access", { cache: "no-store" });
+        const payload = (await response.json()) as { authenticated?: boolean };
+        if (!cancelled) {
+          setIsUnlocked(Boolean(payload.authenticated));
+        }
+      } catch {
+        if (!cancelled) {
+          setIsUnlocked(false);
+        }
+      } finally {
+        if (!cancelled) {
+          setAccessReady(true);
+        }
+      }
+    };
+
+    checkAccess();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const unlockApp = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsCheckingAccess(true);
+    setAccessError(null);
+
+    try {
+      const response = await fetch("/api/access", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ access_code: accessCode }),
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null);
+        const message =
+          payload && typeof payload.error === "string"
+            ? payload.error
+            : "Access check failed.";
+        throw new Error(message);
+      }
+
+      setAccessCode("");
+      setIsUnlocked(true);
+    } catch (err) {
+      setAccessError(err instanceof Error ? err.message : "Access check failed.");
+    } finally {
+      setIsCheckingAccess(false);
+    }
+  };
 
   const buildHighlightSegments = (
     source: string,
@@ -185,6 +248,9 @@ export default function Home() {
           payload && typeof payload.error === "string"
             ? payload.error
             : "Analyze request failed.";
+        if (response.status === 401) {
+          setIsUnlocked(false);
+        }
         throw new Error(message);
       }
 
@@ -327,6 +393,23 @@ export default function Home() {
   const degraded = result?.analysis_status === "degraded";
   const noValidatedErrors =
     result && !degraded && result.errors.length === 0 && !isLoading;
+
+  if (!accessReady) {
+    return <AccessScreen mode="checking" />;
+  }
+
+  if (!isUnlocked) {
+    return (
+      <AccessScreen
+        mode="locked"
+        accessCode={accessCode}
+        accessError={accessError}
+        isCheckingAccess={isCheckingAccess}
+        setAccessCode={setAccessCode}
+        unlockApp={unlockApp}
+      />
+    );
+  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -516,6 +599,88 @@ export default function Home() {
               />
             ) : null}
           </aside>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function AccessScreen({
+  mode,
+  accessCode = "",
+  accessError = null,
+  isCheckingAccess = false,
+  setAccessCode,
+  unlockApp,
+}: {
+  mode: "checking" | "locked";
+  accessCode?: string;
+  accessError?: string | null;
+  isCheckingAccess?: boolean;
+  setAccessCode?: (value: string) => void;
+  unlockApp?: (event: FormEvent<HTMLFormElement>) => void;
+}) {
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_10%,rgba(255,255,255,0.14),transparent_26%),radial-gradient(circle_at_82%_0%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(135deg,#050505_0%,#151515_52%,#050505_100%)]" />
+      <div className="fixed inset-0 z-[1] bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:44px_44px] opacity-35" />
+
+      <section className="relative z-10 flex min-h-screen items-center justify-center p-4">
+        <div className="liquid-glass-strong w-full max-w-md rounded-[2rem] p-6">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="liquid-glass-strong flex h-10 w-10 items-center justify-center rounded-full text-lg font-semibold">
+              V
+            </div>
+            <div>
+              <div className="text-2xl font-semibold tracking-[-0.05em]">
+                Verbum
+              </div>
+              <div className="text-xs text-white/50">
+                Grammar repair for Spanish writing
+              </div>
+            </div>
+          </div>
+
+          {mode === "checking" ? (
+            <p className="text-sm leading-6 text-white/65">Checking access...</p>
+          ) : (
+            <form className="flex flex-col gap-4" onSubmit={unlockApp}>
+              <div>
+                <h1 className="text-2xl font-medium tracking-[-0.04em]">
+                  Access code
+                </h1>
+                <p className="mt-2 text-sm leading-6 text-white/60">
+                  This is a private grammar repair tool using a server-side model
+                  key.
+                </p>
+              </div>
+
+              <input
+                className="rounded-full bg-black/25 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
+                value={accessCode}
+                onChange={(event) => setAccessCode?.(event.target.value)}
+                placeholder="Enter code"
+                type="password"
+                autoComplete="current-password"
+                autoFocus
+              />
+
+              {accessError ? (
+                <div className="rounded-2xl bg-amber-400/15 px-4 py-3 text-sm text-amber-50">
+                  {accessError}
+                </div>
+              ) : null}
+
+              <button
+                type="submit"
+                disabled={isCheckingAccess || !accessCode.trim()}
+                className="liquid-glass-strong inline-flex items-center justify-center gap-3 rounded-full px-5 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {isCheckingAccess ? "Checking..." : "Enter"}
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </form>
+          )}
         </div>
       </section>
     </main>

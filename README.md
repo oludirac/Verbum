@@ -78,7 +78,11 @@ Set:
 ```bash
 OPENAI_API_KEY=
 VERBUM_MODEL=gpt-4.1-mini
+VERBUM_ACCESS_CODE=
 ```
+
+`VERBUM_ACCESS_CODE` is optional locally. When set, Verbum shows a simple
+private access screen and protects `/api/analyze` with an HTTP-only cookie.
 
 Run:
 
@@ -116,5 +120,20 @@ npm run test:live
 - Rule coverage is intentionally small.
 - The grammar score is a rough diagnostic density score, not a fluency score.
 - The app does not persist history.
+- Access control is a single shared passcode, not accounts or user management.
+- API rate limiting is in-memory and best-effort; it is enough for a personal
+  V0, not a public multi-user service.
 - Unmapped issues are kept separate so the rule bank can grow without overcorrecting.
 - Corrections are intentionally minimal and may feel less fluent than a full rewrite.
+
+## Deploy Notes
+
+For Vercel, set:
+
+```bash
+OPENAI_API_KEY=
+VERBUM_MODEL=gpt-4.1-mini
+VERBUM_ACCESS_CODE=
+```
+
+The access code prevents casual visitors from using the server-side OpenAI key.

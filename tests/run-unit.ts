@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
+import {
+  createAccessToken,
+  isAccessControlEnabled,
+  isValidAccessCode,
+  isValidAccessToken,
+} from "../core/access";
 import { applyCorrections } from "../core/correction";
 import { generateDrillsFromErrors } from "../core/drills";
+import { checkRateLimit } from "../core/rate-limit";
 import { rules, allowedRuleIds } from "../core/rules";
 import { computeGrammarScore, compareRewrite } from "../core/scoring";
 import { computeSpans } from "../core/span";
@@ -112,6 +119,31 @@ const run = () => {
   );
   assert.equal(comparison?.fixed_rule_ids[0], "AGR_GENDER_001");
   assert.equal(comparison?.score_delta, 0.5);
+
+  const originalAccessCode = process.env.VERBUM_ACCESS_CODE;
+  const originalAccessSecret = process.env.VERBUM_ACCESS_SECRET;
+  process.env.VERBUM_ACCESS_CODE = "test-code";
+  process.env.VERBUM_ACCESS_SECRET = "test-secret";
+  assert.equal(isAccessControlEnabled(), true);
+  assert.equal(isValidAccessCode("test-code"), true);
+  assert.equal(isValidAccessCode("wrong"), false);
+  assert.equal(isValidAccessToken(createAccessToken()), true);
+  assert.equal(isValidAccessToken("bad-token"), false);
+  if (originalAccessCode === undefined) {
+    delete process.env.VERBUM_ACCESS_CODE;
+  } else {
+    process.env.VERBUM_ACCESS_CODE = originalAccessCode;
+  }
+  if (originalAccessSecret === undefined) {
+    delete process.env.VERBUM_ACCESS_SECRET;
+  } else {
+    process.env.VERBUM_ACCESS_SECRET = originalAccessSecret;
+  }
+
+  const rateKey = `unit-${Date.now()}`;
+  assert.equal(checkRateLimit("unit", rateKey, 2, 60_000).allowed, true);
+  assert.equal(checkRateLimit("unit", rateKey, 2, 60_000).allowed, true);
+  assert.equal(checkRateLimit("unit", rateKey, 2, 60_000).allowed, false);
 
   console.log("Unit tests passed.");
 };
